@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeVault - Upload & View</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Code<span>Vault</span></div>
+    <nav>
+      <a href="#upload">Upload</a>
+      <a href="#view">View</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">C PROGRAM COLLECTION</p>
+      <h1>Upload here. <span>View separately.</span></h1>
+      <p class="subtitle">
+        A basic frontend for uploading programs and viewing them in a separate content area.
+      </p>
+    </section>
+
+    <section id="upload" class="upload-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / UPLOAD</p>
+          <h2>Upload a program</h2>
+        </div>
+      </div>
+
+      <div class="upload-box" id="dropZone">
+        <div class="upload-icon">↑</div>
+        <h3>Drop a file here</h3>
+        <p>or choose a text/code file from your device</p>
+        <input id="fileInput" type="file" accept=".c,.h,.cpp,.java,.py,.js,.txt,.html,.css" hidden>
+        <button class="primary-btn" id="chooseBtn">Choose File</button>
+        <p class="file-name" id="fileName">No file selected</p>
+      </div>
+    </section>
+
+    <section id="view" class="view-section">
+      <div class="section-heading view-heading">
+        <div>
+          <p class="eyebrow">02 / VIEW</p>
+          <h2>Uploaded programs</h2>
+        </div>
+        <span class="count" id="programCount">3 programs</span>
+      </div>
+
+      <div class="program-grid" id="programGrid"></div>
+    </section>
+  </main>
+
+  <div class="modal hidden" id="viewerModal">
+    <div class="modal-card">
+      <button class="close-btn" id="closeModal">×</button>
+      <p class="eyebrow" id="modalType">C PROGRAM</p>
+      <h2 id="modalTitle"></h2>
+      <pre><code id="modalCode"></code></pre>
+    </div>
+  </div>
+
+  <footer>
+    <p>CodeVault • Frontend prototype</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
